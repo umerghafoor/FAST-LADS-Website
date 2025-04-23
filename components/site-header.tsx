@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -23,6 +24,16 @@ export function SiteHeader() {
       active: pathname === "/about",
     },
     {
+      href: "/events",
+      label: "Events",
+      active: pathname === "/events",
+    },
+    {
+      href: "/past-events",
+      label: "Past Events",
+      active: pathname === "/past-events",
+    },
+    {
       href: "/gallery",
       label: "Gallery",
       active: pathname === "/gallery",
@@ -37,9 +48,22 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex gap-6 md:gap-10">
+        <div className="flex gap-6 md:gap-10 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="inline-block font-bold text-xl">FAST-LADS</span>
+            <div className="relative h-10 w-10 overflow-hidden rounded-full bg-primary">
+              {/* Logo placeholder - replace with actual logo */}
+              <Image
+                src="/placeholder.svg?height=40&width=40&text=LADS"
+                alt="FAST-LADS Logo"
+                width={40}
+                height={40}
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="inline-block font-bold text-lg leading-tight">FAST-LADS</span>
+              <span className="text-xs text-muted-foreground leading-tight">NUCES FAST</span>
+            </div>
           </Link>
           <nav className="hidden md:flex gap-6">
             {routes.map((route) => (
@@ -70,6 +94,21 @@ export function SiteHeader() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="pr-0">
+                <div className="flex items-center space-x-2 mb-6">
+                  <div className="relative h-8 w-8 overflow-hidden rounded-full bg-primary">
+                    <Image
+                      src="/placeholder.svg?height=32&width=32&text=LADS"
+                      alt="FAST-LADS Logo"
+                      width={32}
+                      height={32}
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-base leading-tight">FAST-LADS</span>
+                    <span className="text-xs text-muted-foreground leading-tight">NUCES FAST</span>
+                  </div>
+                </div>
                 <nav className="flex flex-col gap-4">
                   {routes.map((route) => (
                     <Link

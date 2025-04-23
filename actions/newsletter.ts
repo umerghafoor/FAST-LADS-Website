@@ -15,7 +15,8 @@ export async function subscribeToNewsletter(formData: FormData) {
       }
     }
 
-    // Use our local data store function
+    // On the server, we'll use the local data store directly
+    // This will be overridden on the client if Firebase is enabled
     const result = await addSubscription(email)
 
     // Revalidate the home and blog pages to update any newsletter components

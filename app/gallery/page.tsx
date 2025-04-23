@@ -17,7 +17,7 @@ export default function GalleryPage() {
     const fetchData = async () => {
       try {
         const images = await getSlideshowImages()
-        const events = await getEvents()
+        const events = await getEvents(false, true) // Get past events
 
         setSlideshowImages(images)
         setPastEvents(events)
@@ -109,7 +109,7 @@ export default function GalleryPage() {
         </section>
 
         {/* Past Events Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-neutral">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

@@ -47,6 +47,7 @@ export function NewsletterForm() {
         })
       }
     } catch (error) {
+      console.error("Newsletter subscription error:", error)
       toast({
         title: "Something went wrong",
         description: "Failed to subscribe. Please try again.",
@@ -66,12 +67,12 @@ export function NewsletterForm() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full"
+            className="w-full border-primary focus-visible:ring-primary"
             required
             disabled={isLoading}
           />
         </div>
-        <Button type="submit" disabled={isLoading}>
+        <Button type="submit" disabled={isLoading} className="bg-secondary hover:bg-secondary/90">
           {isLoading ? (
             "Subscribing..."
           ) : (
