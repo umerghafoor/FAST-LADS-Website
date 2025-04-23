@@ -50,16 +50,13 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="flex gap-6 md:gap-10 items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full bg-primary">
-              {/* Logo placeholder - replace with actual logo */}
               <Image
-                src="/placeholder.svg?height=40&width=40&text=LADS"
+                src="/logo.svg?height=40&width=40&text=LADS"
                 alt="FAST-LADS Logo"
-                width={40}
-                height={40}
+                width={24}
+                height={24}
                 className="object-cover"
               />
-            </div>
             <div className="flex flex-col">
               <span className="inline-block font-bold text-lg leading-tight">FAST-LADS</span>
               <span className="text-xs text-muted-foreground leading-tight">NUCES FAST</span>
